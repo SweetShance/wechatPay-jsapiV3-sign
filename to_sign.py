@@ -62,9 +62,9 @@ class ToSign:
 if __name__ == "__main__":
     url = "https://api.mch.weixin.qq.com/v3/pay/transactions/jsapi"
     data = {
-        "appid": "wx36c9d622d2dcd482", #config.appid,
-        "mchid": "1609191198", #"#config.mchid,
-        "description": "izdax输入法，商户入驻",
+        "appid": "********", #config.appid,
+        "mchid": "********", #"#config.mchid,
+        "description": "商户入驻",
         "out_trade_no": "2021050814839736",
         "notify_url": "https://weixin.qq.com/",
         "amount": {"total": 100, "currency": "CNY"},
