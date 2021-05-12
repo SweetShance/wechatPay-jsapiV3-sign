@@ -58,6 +58,15 @@ class ToSign:
                    serial_no="serial_no"
                    )
         return authorization
+    
+    @classmethod
+    def check_sign(text, sign): # text -> 签名串， sign ->签名
+        signature2 = PKCS1_v1_5.new(cls.private_key) # 密钥
+        _rand_hash = Hash.SHA256.new()
+
+        _rand_hash.update(sign_str.encode())
+        z = signature2.verify(_rand_hash, signature)
+        # z 返回的是True 或 False
 
 if __name__ == "__main__":
     url = "https://api.mch.weixin.qq.com/v3/pay/transactions/jsapi"
